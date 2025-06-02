@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    animation: gradientMove 10s ease infinite;
+    color: white;
+    overflow: hidden;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .container {
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1, p, .btn {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  h1 {
+    animation-delay: 0.5s;
+    font-size: 3em;
+    margin-bottom: 0.2em;
+  }
+  
+  p {
+    animation-delay: 1s;
+    font-size: 1.3em;
+    margin-bottom: 2em;
+    color: #aaa;
+  }
+  
+  .btn {
+    animation-delay: 1.5s;
+    padding: 15px 30px;
+    background: #00ffff;
+    color: #111;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 20px #00ffff80;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+  }
+  
+  .btn:hover::before {
+    left: 130%;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ffff;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
