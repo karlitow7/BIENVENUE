@@ -1,109 +1,96 @@
+/* Reset & base */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: black;
-    overflow: hidden;
-    font-family: 'Orbitron', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    text-align: center;
-  }
-  
-  #matrix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    background: black;
-  }
-  
-  .container {
-    position: relative;
-    z-index: 10;
-    max-width: 800px;
-    padding: 0 10px;
-  }
-  
-  .intro {
-    font-size: 2em;
-    margin-bottom: 0.3em;
-    font-weight: bold;
-    color: white;
-  }
-  
-  h1 {
-    font-size: 6em;
-    font-weight: 900;
-    margin: 0 0 0.5em 0;
-    background: linear-gradient(270deg, #00ffff, #00cccc, #33dddd, #00ffff);
-    background-size: 800% 800%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientAnim 8s ease infinite;
-    text-shadow: 0 0 10px #00ffffcc;
-  }
-  
-  .btn {
-    background: linear-gradient(45deg, #00cccc, #00ffff);
-    border: none;
-    padding: 15px 45px;
-    font-size: 1.4em;
-    font-weight: 700;
-    border-radius: 40px;
-    color: #111;
-    cursor: pointer;
-    box-shadow: 0 0 20px #00ffffaa;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    user-select: none;
-  }
-  
-  .btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 35px #00ffffdd;
-  }
-  
-  @keyframes gradientAnim {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  /* --- Responsive pour mobiles --- */
-  @media(max-width: 768px) {
-    h1 {
-      font-size: 3.5em;
-    }
-  
-    .intro {
-      font-size: 1.5em;
-    }
-  
-    .btn {
-      font-size: 1.2em;
-      padding: 12px 30px;
-    }
-  }
-  
-  @media(max-width: 480px) {
-    h1 {
-      font-size: 2.8em;
-    }
-  
-    .intro {
-      font-size: 1.2em;
-    }
-  
-    .btn {
-      font-size: 1em;
-      padding: 10px 20px;
-    }
-  }
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+/* canvas matrix */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: black;
+}
+
+/* container texte au-dessus */
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+/* HADDAD Karl */
+.intro {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+  color: white;
+}
+
+/* Gros BIENVENUE bleu dégradé */
+h1 {
+  font-size: 6em;
+  font-weight: 900;
+  margin: 0 0 0.5em 0;
+  background: linear-gradient(270deg, #00ffff, #00cccc, #33dddd, #00ffff);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnim 8s ease infinite;
+  text-shadow: 0 0 10px #00ffffcc;
+}
+
+/* Bouton bleu dégradé */
+.btn {
+  background: linear-gradient(45deg, #00cccc, #00ffff);
+  border: none;
+  padding: 15px 45px;
+  font-size: 1.4em;
+  font-weight: 700;
+  border-radius: 40px;
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00ffffaa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px #00ffffdd;
+}
+
+/* Animation dégradé */
+@keyframes gradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  h1 { font-size: 3.5em; }
+  .intro { font-size: 1.5em; }
+  .btn { font-size: 1.2em; padding: 12px 30px; }
+}
+
+@media(max-width: 480px) {
+  h1 { font-size: 2.5em; }
+  .intro { font-size: 1.2em; }
+  .btn { font-size: 1em; padding: 10px 25px; }
+}
