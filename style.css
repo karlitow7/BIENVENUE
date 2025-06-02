@@ -1,146 +1,185 @@
-body {
+/* =========================
+   STYLE MATRIX PORTFOLIO
+   ========================= */
+
+   body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    font-family: 'Orbitron', sans-serif;
-    background: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
     color: white;
+    overflow-x: hidden;
+    position: relative;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
     text-align: center;
+    padding: 20px; /* pour éviter débordement horizontal */
   }
   
   canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
   }
   
   .container {
-    position: relative;
-    z-index: 10; /* Au-dessus du canvas */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    transform: translateY(-20vh);
-    width: 100%;
-    max-width: 700px;
-    padding: 0 20px;
+    z-index: 1;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+    max-width: 90vw;
+    padding: 20px;
+    box-sizing: border-box;
   }
   
-  /* HADDAD Karl */
-  .intro {
-    font-size: 2em;
-    color: #fff;
-    font-weight: bold;
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-    margin: 0;
+  h2 {
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 0.5em;
+    animation: slideDown 1s ease forwards;
+    opacity: 0;
+    word-wrap: break-word;
+    /* Important pour ne pas déborder */
   }
   
-  /* BIENVENUE avec dégradé violet animé */
-  h1.animated-gradient {
-    font-size: 5em;
+  h1 {
+    font-size: 3em;
+    margin: 0.2em 0;
     font-weight: 900;
-    margin: 0 0 10px 0;
-    background: linear-gradient(270deg, #ff00ff, #ff33cc, #cc00cc, #ff66ff);
-    background-size: 800% 800%;
+    background: linear-gradient(90deg, #08f, #0ff); /* bleu vif */
+    background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #ff33cc; /* fallback */
-    animation: gradientBG 6s ease infinite;
-    text-shadow:
-      0 0 3px #ff66ffaa,
-      0 0 7px #ff33cccc;
-    filter: drop-shadow(0 0 1.5px #ff66ffcc);
-    letter-spacing: 0.05em;
-    overflow: hidden;
-    white-space: nowrap;
+    color: transparent;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+    word-wrap: break-word;
   }
   
-  /* Bouton */
-  .btn {
-    background: linear-gradient(45deg, #ff33cc, #cc00cc);
-    border: none;
-    padding: 14px 40px;
-    font-size: 1.25em;
-    border-radius: 40px;
-    font-weight: 900;
+  .matrix-text {
+    font-size: 1.4em;
+    color: white;
+    margin-top: 1em;
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* pour forcer le retour à la ligne si trop long */
+  }
+  
+  button {
+    margin-top: 2em;
+    padding: 15px 30px;
+    background: #08f; /* bleu */
     color: #111;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 20px #ff33ccaa;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 20px #0ff80;
+    animation: fadeInUp 2s ease forwards;
     opacity: 0;
-    animation: btnFadeIn 0.5s ease 1.5s forwards;
+    max-width: 90vw;
+    white-space: normal;
+    /* permet le retour à la ligne sur petit écran */
   }
   
-  .btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 35px #ff00ffcc;
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #0ff;
+    background: #05c;
   }
   
-  /* Animations d'apparition texte */
-  .animate-fade-slide {
-    opacity: 0;
-    animation: fadeSlideIn 0.8s ease forwards;
-  }
-  
-  .animate-fade-slide.delay-1 {
-    animation-delay: 0.3s;
-  }
-  
-  .animate-fade-slide.delay-2 {
-    animation-delay: 0.7s;
-  }
-  
-  @keyframes fadeSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+  /* Animations */
+  @keyframes fadeIn {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
   
-  /* Animation dégradé BIENVENUE */
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
     }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  /* Animation bouton */
-  @keyframes btnFadeIn {
     to {
+      transform: translateY(0);
       opacity: 1;
     }
   }
   
-  /* Responsive */
-  @media (max-width: 768px) {
-    .intro {
-      font-size: 1.5em;
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
     }
-    h1.animated-gradient {
-      font-size: 3.5em;
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
-    .btn {
-      width: 90%;
+  }
+  
+  /* =========================
+     RESPONSIVE DESIGN
+     ========================= */
+  
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.2em;
+    }
+  
+    h2 {
       font-size: 1.1em;
-      padding: 14px 30px;
+    }
+  
+    .matrix-text {
+      font-size: 1.1em;
+    }
+  
+    button {
+      padding: 12px 20px;
+      font-size: 1em;
+      max-width: 100%;
+    }
+  
+    .container {
+      max-width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 1.8em;
+    }
+  
+    h2 {
+      font-size: 1em;
+    }
+  
+    .matrix-text {
+      font-size: 1em;
+    }
+  
+    button {
+      padding: 10px 16px;
+      font-size: 0.9em;
+    }
+  
+    .container {
+      padding: 8px;
     }
   }
   
