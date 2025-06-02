@@ -1,97 +1,146 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100vh;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    background: #000;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-    animation: gradientMove 10s ease infinite;
-    color: white;
-    overflow: hidden;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
   }
   
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
   
   .container {
-    text-align: center;
-    animation: fadeIn 2s ease forwards;
-    opacity: 0;
+    position: relative;
+    z-index: 10; /* Au-dessus du canvas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    transform: translateY(-20vh);
+    width: 100%;
+    max-width: 700px;
+    padding: 0 20px;
   }
   
-  @keyframes fadeIn {
+  /* HADDAD Karl */
+  .intro {
+    font-size: 2em;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    margin: 0;
+  }
+  
+  /* BIENVENUE avec dégradé violet animé */
+  h1.animated-gradient {
+    font-size: 5em;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    background: linear-gradient(270deg, #ff00ff, #ff33cc, #cc00cc, #ff66ff);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ff33cc; /* fallback */
+    animation: gradientBG 6s ease infinite;
+    text-shadow:
+      0 0 3px #ff66ffaa,
+      0 0 7px #ff33cccc;
+    filter: drop-shadow(0 0 1.5px #ff66ffcc);
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  /* Bouton */
+  .btn {
+    background: linear-gradient(45deg, #ff33cc, #cc00cc);
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.25em;
+    border-radius: 40px;
+    font-weight: 900;
+    color: #111;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff33ccaa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    opacity: 0;
+    animation: btnFadeIn 0.5s ease 1.5s forwards;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px #ff00ffcc;
+  }
+  
+  /* Animations d'apparition texte */
+  .animate-fade-slide {
+    opacity: 0;
+    animation: fadeSlideIn 0.8s ease forwards;
+  }
+  
+  .animate-fade-slide.delay-1 {
+    animation-delay: 0.3s;
+  }
+  
+  .animate-fade-slide.delay-2 {
+    animation-delay: 0.7s;
+  }
+  
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
   
-  h1, p, .btn {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
+  /* Animation dégradé BIENVENUE */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
-  h1 {
-    animation-delay: 0.5s;
-    font-size: 3em;
-    margin-bottom: 0.2em;
-  }
-  
-  p {
-    animation-delay: 1s;
-    font-size: 1.3em;
-    margin-bottom: 2em;
-    color: #aaa;
-  }
-  
-  .btn {
-    animation-delay: 1.5s;
-    padding: 15px 30px;
-    background: #00ffff;
-    color: #111;
-    border: none;
-    border-radius: 40px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 20px #00ffff80;
-  }
-  
-  .btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: skewX(-20deg);
-    transition: left 0.5s ease;
-  }
-  
-  .btn:hover::before {
-    left: 130%;
-  }
-  
-  .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #00ffff;
-  }
-  
-  @keyframes fadeInUp {
+  /* Animation bouton */
+  @keyframes btnFadeIn {
     to {
       opacity: 1;
-      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .intro {
+      font-size: 1.5em;
+    }
+    h1.animated-gradient {
+      font-size: 3.5em;
+    }
+    .btn {
+      width: 90%;
+      font-size: 1.1em;
+      padding: 14px 30px;
     }
   }
   
