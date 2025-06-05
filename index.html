@@ -1,88 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenue</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-
+  <div class="liquid-bg"></div>
   <div class="container">
     <p class="intro">HADDAD Karl</p>
     <h1>BIENVENUE</h1>
-    <a href="https://portfolio46348.wordpress.com" target="_blank" class="btn" id="btn-portfolio">Découvrir mon Portfolio</a>
+    <div class="btn-container">
+      <a href="reseaux.html" class="btn">Mes Réseaux</a>
+      <a href="album.html" class="btn">Discographie</a>
+      <a href="https://portfolio46348.wordpress.com" target="_blank" class="btn">Mon Portfolio</a>
+    </div>
   </div>
-
-  <audio id="click-sound" src="matrix-click.mp3" preload="auto"></audio>
-  <audio id="down-sound" src="matrix-down.mp3" preload="auto"></audio>
-
-  <script>
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const letters = 'アァイィウエオカキクケコサシスセソ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const message = "Membre du jury, prêt pour l'expérience ?";
-    const fontSize = 16;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = Array(columns).fill(1);
-
-    let revealIndex = 0;
-    const revealSpeed = 12;
-
-    function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = '#a569bd';
-      ctx.font = fontSize + 'px monospace';
-
-      for (let i = 0; i < drops.length; i++) {
-        const char = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-
-      if (revealIndex < message.length) {
-        revealIndex += revealSpeed;
-      }
-      const shownText = message.slice(0, Math.floor(revealIndex));
-
-      // Adaptation responsive
-      let textSize = canvas.width < 480 ? 16 : canvas.width < 768 ? 28 : 36;
-      ctx.font = `bold ${textSize}px monospace`;
-      ctx.fillStyle = 'white';
-      ctx.fillText(shownText, canvas.width / 2 - ctx.measureText(shownText).width / 2, canvas.height / 1.1);
-    }
-
-    setInterval(draw, 35);
-
-    const btn = document.getElementById('btn-portfolio');
-    const clickSound = document.getElementById('click-sound');
-    const downSound = document.getElementById('down-sound');
-
-    btn.addEventListener('mousedown', () => {
-      downSound.currentTime = 0;
-      downSound.play();
-    });
-
-    btn.addEventListener('click', () => {
-      clickSound.currentTime = 0;
-      clickSound.play();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
