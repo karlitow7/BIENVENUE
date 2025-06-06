@@ -81,3 +81,37 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+// Navigation par flèches
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.album-carousel');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+  const albumItems = document.querySelectorAll('.album-item');
+  const itemWidth = albumItems[0].offsetWidth + 32; // largeur + gap
+  
+  if (carousel && leftArrow && rightArrow) {
+    leftArrow.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: -itemWidth,
+        behavior: 'smooth'
+      });
+    });
+    
+    rightArrow.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: itemWidth,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Rotation des albums au survol
+  albumItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.querySelector('img').style.animation = 'rotate 5s infinite linear';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.querySelector('img').style.animation = 'none';
+    });
+  });
+});
