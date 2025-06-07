@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entreprendre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles optimisés */
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      z-index: 100;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Styles pour les travaux */
+    .travail-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .media-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .description-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+    
+    .media-container {
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      overflow: hidden;
+      background: #333;
+      border-radius: 8px;
+    }
+    
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+    }
+    
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .image-container {
+      width: 100%;
+      height: auto;
+    }
+    
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #FFD700;
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    .sae-reference {
+      font-style: italic;
+      color: #800020 !important;
+      font-size: 15px;
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px dashed #555;
+    }
+
+    /* Travail 1 - Texte en haut */
+    .travail-1 .description-column {
+      justify-content: flex-start;
+    }
+
+    /* Bouton de lien */
+    .social-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #FF0050;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+    
+    .instagram-link {
+      background: #E1306C;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .travail-item {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      
+      .media-column,
+      .description-column {
+        width: 100%;
+      }
+      
+      .description-column {
+        justify-content: flex-start;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <a href="competences.html" class="back-btn animate__animated animate__fadeIn">← Retour</a>
+  
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">ENTREPRENDRE</h1>
+    
+    <!-- Travail 1 - 1 vidéo YouTube -->
+    <div class="travail-item travail-1 animate__animated animate__fadeInUp">
+      <div class="media-column">
+        <div class="media-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/uwkBc3wOEJE" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="description-column">
+        <h3>Documentaire : Premiers pas dans la pêche</h3>
+        <p>Un récit personnel filmé en conditions réelles, où je découvre la pêche aux côtés de Julien, mon guide, et Nico, qui me vend ma première canne. Entre apprentissage et rencontres, ce film capture mes débuts dans cet univers.</p>
+        <p>Organisation Solo et entretiens avec les intervenants</p>
+        <p class="sae-reference">SAE 301 – Conduire un projet de communication numérique</p>  
+      </div>
+    </div>
+    
+    <!-- Travail 2 - 2 vidéos YouTube -->
+    <div class="travail-item animate__animated animate__fadeInUp">
+      <div class="media-column">
+        <div class="media-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/qUkHe4PB7x8" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="media-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/_N5SoNDQI40" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="description-column">
+        <h3>Conduite de projets de communication visuelle</h3>
+        <p>Réalisation d'une vidéo promotionnelle de l'établissement scolaire privé Saint-Joseph de Cluny à Saint-Claude, ainsi qu'une vidéo rétrospective du défilé des écoles 2025.</p>
+        <p>Ces contenus sont disponibles sur le site officiel de l'Externat Saint-Joseph de Cluny.</p>
+        <p class="sae-reference">SAE 301 – Conduire un projet de communication numérique</p>  
+      </div>
+    </div>
+    
+    <!-- Travail 3 - 1 vidéo YouTube + 1 image -->
+    <div class="travail-item animate__animated animate__fadeInUp">
+      <div class="media-column">
+        <div class="media-container">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/cbeNJ89eZZg" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="media-container">
+          <div class="image-container">
+            <img src="img/echocam.png" alt="Affiche Echo du silence">
+          </div>
+        </div>
+      </div>
+      <div class="description-column">
+        <h3>Fiction : Echo du silence</h3>
+        <p>Participation active à un projet de fiction, où j'ai assuré les rôles d'acteur, cadreur et monteur. J'ai contribué à toutes les étapes de la production, de l'organisation du tournage jusqu'au montage final.</p>
+        <p>Ce projet m'a permis de développer mon autonomie, mon sens de l'initiative et ma capacité à gérer un projet créatif en équipe.</p>
+        <p class="sae-reference">SAE 301 – Conduire un projet de communication numérique</p>  
+      </div>
+    </div>
+    
+    <!-- Travail 4 - TikTok (image statique) -->
+    <div class="travail-item animate__animated animate__fadeInUp">
+      <div class="media-column">
+        <div class="media-container">
+          <div class="image-container">
+            <img src="img/tiktokkaydi.png" alt="Capture de la page TikTok MK.arlitoo">
+          </div>
+        </div>
+      </div>
+      <div class="description-column">
+        <h3>Série sur TikTok : « Kay Di »</h3>
+        <p>Une série de vidéos musicales d'une minute, en créole, mêlant humour, actualité et sujets du quotidien. À travers des chansons originales, 'Kay Di' commente l'époque avec rythme et authenticité.</p>
+        <a href="https://www.tiktok.com/@mk.arlitoo" target="_blank" class="social-link">Voir ma page TikTok</a>
+        <p class="sae-reference">SAE 202 – Produire et publier des contenus multimédias</p>
+      </div>
+    </div>
+    
+    <!-- Travail 5 - Instagram (image statique) -->
+    <div class="travail-item animate__animated animate__fadeInUp">
+      <div class="media-column">
+        <div class="media-container">
+          <div class="image-container">
+            <img src="img/bloklogo.png" alt="Capture de la page Instagram BLO'K">
+          </div>
+        </div>
+      </div>
+      <div class="description-column">
+        <h3>Notre média : BLO'K</h3>
+        <p>Participation à la création d'un média digital avec l'ensemble de la promotion, proposant des contenus variés sur des sujets diverses et variés, également sur l'actualité avec des formats créatifs. Responsable de la création de sketchs, ma spécialité dans le projet.</p>
+        <a href="https://www.instagram.com/blok.actu/" target="_blank" class="social-link instagram-link">Voir notre page Instagram</a>
+        <p class="sae-reference">SAE 303 – Piloter un projet dans une organisation</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

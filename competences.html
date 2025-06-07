@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Compétences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* NOUVEAUX STYLES SPÉCIFIQUES */
+    .competences-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 3rem 0;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .competence-btn {
+      text-decoration: none;
+    }
+
+    .bubble {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #800020, #600018);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 5px 15px rgba(128, 0, 32, 0.4);
+      animation: bubbleEnter 0.6s both;
+    }
+
+    .bubble:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(128, 0, 32, 0.6);
+    }
+
+    .bubble-dots {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle, transparent 60%, rgba(255,255,255,0.1) 60%),
+        radial-gradient(circle, transparent 30%, rgba(255,255,255,0.05) 30%);
+      background-size: 20px 20px, 40px 40px;
+    }
+
+    @keyframes bubbleEnter {
+      from { transform: scale(0) rotate(180deg); opacity: 0; }
+      to { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .competences-container {
+        gap: 1rem;
+      }
+      .bubble {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .competences-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .bubble {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles-bg"></div>
+  <a href="index.html" class="back-btn animate__animated animate__fadeIn">← Retour</a>
+  
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">Mes Compétences</h1>
+    
+    <div class="competences-container animate__animated animate__zoomIn">
+      <a href="concevoir.html" class="competence-btn">
+        <div class="bubble" style="animation-delay: 0.1s">
+          <span>CONCEVOIR</span>
+          <div class="bubble-dots"></div>
+        </div>
+      </a>
+      
+      <a href="comprendre.html" class="competence-btn">
+        <div class="bubble" style="animation-delay: 0.2s">
+          <span>COMPRENDRE</span>
+          <div class="bubble-dots"></div>
+        </div>
+      </a>
+      
+      <a href="exprimer.html" class="competence-btn">
+        <div class="bubble" style="animation-delay: 0.3s">
+          <span>EXPRIMER</span>
+          <div class="bubble-dots"></div>
+        </div>
+      </a>
+      
+      <a href="developper.html" class="competence-btn">
+        <div class="bubble" style="animation-delay: 0.4s">
+          <span>DÉVELOPPER</span>
+          <div class="bubble-dots"></div>
+        </div>
+      </a>
+      
+      <a href="entreprendre.html" class="competence-btn">
+        <div class="bubble" style="animation-delay: 0.5s">
+          <span>ENTREPRENDRE</span>
+          <div class="bubble-dots"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

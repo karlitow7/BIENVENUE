@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exprimer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles optimisés */
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .travail-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .travail-visuel {
+      flex: 1;
+      min-width: 55%;
+    }
+    
+    .travail-description {
+      flex: 1;
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: white;
+    }
+    
+    .media-container {
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Conteneur vidéo YouTube - Hauteur automatique */
+    .video-container {
+      width: 100%;
+      position: relative;
+    }
+    
+    .video-container iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+    
+    /* Conteneur image - Dimensions fixes */
+    .image-container {
+      width: 100%;
+      height: auto;
+      max-height: 590px;
+    }
+    
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .travail-description h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #FFD700;
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .travail-description p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      color: white;
+    }
+    
+    .travail-description .sae-reference {
+      font-style: italic;
+      color: #800020 !important;
+      font-size: 15px;
+      margin-top: auto;
+      padding-bottom: 10px;
+      border-top: 1px dashed #555;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .travail-item {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+      .travail-visuel,
+      .travail-description {
+        width: 100%;
+      }
+      .media-container {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <a href="competences.html" class="back-btn animate__animated animate__fadeIn">← Retour</a>
+  
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">Exprimer</h1>
+    
+    <div class="travaux-container animate__animated animate__fadeInUp">
+      <!-- Documentaire -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="media-container animate__animated animate__zoomIn">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/HkSIe_od2Ns" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Documentaire : Le cinéma, arme d'influence</h3>
+          <p>Ce film explore comment le cinéma peut devenir un outil de propagande et de manipulation des masses. À travers des extraits, des analyses et des exemples marquants, il met en lumière les coulisses d'un pouvoir souvent invisible : celui de l'image.</p>
+          <p class="sae-reference">SAE 202 – Produire et publier des contenus multimédias.</p>
+        </div>
+      </div>
+
+      <!-- Clip 12:PM -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="media-container animate__animated animate__zoomIn">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/IPvrCoqg1_0" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>CLIP : 12:PM</h3>
+          <p>Conception et réalisation d'un clip vidéo avec une direction artistique forte, inspirée des codes visuels du cinéma d'espionnage.</p>
+          <p>Ce projet m'a permis de développer ma capacité à construire une narration visuelle cohérente, à soigner l'esthétique et à exprimer un univers singulier à travers le cadrage, les décors et le jeu d'acteur.</p>
+          <p class="sae-reference">SAE 202 – Produire et publier des contenus multimédias.</p>
+        </div>
+      </div>
+
+      <!-- Flyer RHT -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="media-container animate__animated animate__zoomIn">
+            <div class="image-container">
+              <img src="img/flyersrhtvélo.jpg" alt="Flyer RHT Tour Junior Cyclisme">
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Création d'un flyer pour direct radio</h3>
+          <p>Réalisation d'un flyer promotionnel pour annoncer la diffusion en direct du Tour Junior de Cyclisme en Martinique. L'affiche a été conçue à l'aide de l'intelligence artificielle pour générer une image de fond impactante, puis retravaillée graphiquement.</p>
+          <p>Ce projet m'a permis de développer mes compétences en création visuelle, en expression d'un message promotionnel, et en adaptation aux codes d'un événement sportif.</p>
+       <p class="sae-reference">SAE 201 – Décliner une identité visuelle</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenue</title>
+  <title>Portfolio - Accueil</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="first-load">
   <div class="liquid-bg"></div>
-  <div class="container">
-    <p class="intro">Karl HADDAD</p>
-    <h1>BIENVENUE</h1>
+  
+  <!-- Animation d'entrée -->
+  <div class="intro-animation">
+    <div class="intro-logo animate__animated animate__zoomIn"></div>
+    <div class="intro-titles">
+      <h1 class="animate__animated animate__fadeIn">BIENVENUE</h1>
+    </div>
+    <div class="intro-particles"></div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="container animate__animated animate__fadeIn animate__delay-1s">
+    <!-- Nom animé amélioré -->
+    <div class="name-container animate__animated animate__fadeInDown animate__delay-1s">
+      <div class="name-wrapper">
+        <span class="first-name">Karl</span>
+        <span class="last-name">HADDAD</span>
+      </div>
+      <div class="subtitle animate__animated animate__fadeIn animate__delay-1.5s">
+        Caméraman – Monteur – Artiste
+      </div>
+    </div>
+    
     <div class="btn-container">
-      <a href="reseaux.html" class="btn">Mes Réseaux</a>
-      <a href="https://portfolio46348.wordpress.com" target="_blank" class="btn">Mon Portfolio</a>
-      <a href="album.html" class="btn">Discographie</a>
+      <a href="reseaux.html" class="btn animate__animated animate__fadeInUp animate__delay-1s">Mes Réseaux</a>
+      <a href="competences.html" class="btn animate__animated animate__fadeInUp animate__delay-1.2s">Mon Portfolio</a>
+      <a href="album.html" class="btn animate__animated animate__fadeInUp animate__delay-1.4s">Discographie</a>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

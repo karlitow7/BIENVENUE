@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concevoir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles optimisés */
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .travail-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .travail-visuel {
+      flex: 1;
+      min-width: 55%;
+    }
+    
+    .travail-description {
+      flex: 1;
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      justify-content: flex-start;
+      color: white;
+    }
+    
+    .pdf-viewer-container {
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      background: #333;
+    }
+    
+    .pdf-iframe {
+      width: 100%;
+      height: calc(100% - 44px);
+      border: none;
+    }
+    
+    .pdf-options {
+      text-align: center;
+      padding: 8px;
+      background: #2a2a2a;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 44px;
+      border-top: 1px solid #444;
+    }
+    
+    .pdf-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: #4a6fa5;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s;
+      font-size: 12px;
+    }
+    
+    .travail-description h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #FFD700;
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .travail-description p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      color: white;
+    }
+    
+    .travail-description .sae-reference {
+      font-style: italic;
+      color: #800020 !important;
+      font-size: 15px;
+      margin-top: auto;
+      padding-bottom: 10px;
+      border-top: 1px dashed #555;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .travail-item {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+      .travail-description {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <a href="competences.html" class="back-btn animate__animated animate__fadeIn">← Retour</a>
+  
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">CONCEVOIR</h1>
+    
+    <div class="travaux-container animate__animated animate__fadeInUp">
+      <!-- Storyboard -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="pdf-viewer-container animate__animated animate__zoomIn">
+            <iframe class="pdf-iframe" 
+                    src="https://drive.google.com/file/d/1f7rS2u37cj_9PL1XdZjlokQOWhP57A94/preview" 
+                    allow="autoplay">
+            </iframe>
+            <div class="pdf-options">
+              <a href="https://drive.google.com/uc?export=download&id=1f7rS2u37cj_9PL1XdZjlokQOWhP57A94" 
+                 class="pdf-btn">
+                Télécharger
+              </a>
+              <a href="https://drive.google.com/file/d/1f7rS2u37cj_9PL1XdZjlokQOWhP57A94/view" 
+                 target="_blank" 
+                 class="pdf-btn">
+                Ouvrir dans Drive
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Conception de Storyboard</h3>
+          <p>Réalisation complète d'un storyboard pour clip musical avec découpage technique et narration visuelle.</p>
+          <p>Cette étape m’a permis de penser le rythme narratif, d’organiser la mise en scène plan par plan, et de traduire visuellement une intention artistique.</p>
+          <p class="sae-reference">SAE 102 - concevoir une réponse visuelle structurée, en anticipant les besoins de tournage et le déroulé du récit.</p>
+        </div>
+      </div>
+
+      <!-- Catalogue -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="pdf-viewer-container animate__animated animate__zoomIn">
+            <iframe class="pdf-iframe" 
+                    src="https://drive.google.com/file/d/1EFnNQrkP9e9cHYcrid1HQiEvppVD-VWz/preview" 
+                    allow="autoplay">
+            </iframe>
+            <div class="pdf-options">
+              <a href="https://drive.google.com/uc?export=download&id=1EFnNQrkP9e9cHYcrid1HQiEvppVD-VWz" 
+                 class="pdf-btn">
+                Télécharger
+              </a>
+              <a href="https://drive.google.com/file/d/1EFnNQrkP9e9cHYcrid1HQiEvppVD-VWz/view" 
+                 target="_blank" 
+                 class="pdf-btn">
+                Ouvrir dans Drive
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Conception de Catalogue</h3>
+          <p>J'ai conçu un catalogue de produits destiné à un magasin, en veillant à la structure claire des pages, à l'agencement logique des rubriques et à la mise en avant des produits phares.</p>
+          <p>J'ai réfléchi à la hiérarchie visuelle, à l'adaptation du message au public cible, ainsi qu'au respect de la charte graphique de l'enseigne.</p>
+          <p class="sae-reference">SAE 102 - répondre à un besoin de communication visuelle commerciale, en proposant une solution organisée, cohérente et fonctionnelle.</p>
+        </div>
+      </div>
+
+      <!-- Vanill'île -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="pdf-viewer-container animate__animated animate__zoomIn">
+            <iframe class="pdf-iframe" 
+                    src="https://drive.google.com/file/d/1ZPwuMAS_55lTNdOcW6OdE4qNZD3aChHu/preview" 
+                    allow="autoplay">
+            </iframe>
+            <div class="pdf-options">
+              <a href="https://drive.google.com/uc?export=download&id=1ZPwuMAS_55lTNdOcW6OdE4qNZD3aChHu" 
+                 class="pdf-btn">
+                Télécharger
+              </a>
+              <a href="https://drive.google.com/file/d/1ZPwuMAS_55lTNdOcW6OdE4qNZD3aChHu/view" 
+                 target="_blank" 
+                 class="pdf-btn">
+                Ouvrir dans Drive
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Projet Vanill'île</h3>
+          <p>J'ai participé à l'élaboration complète du projet Vanill'île, une marque fictive de bonbons bio à base de vanille Pompona, cultivée en Guadeloupe.</p>
+          <p>Ce projet a impliqué la conception du produit, la définition de la stratégie de communication, la création d'une identité visuelle (logo, packaging, affiche, triptyque) et l'étude de faisabilité technique, économique et marketing.</p>
+          <p class="sae-reference">SAE 102 - concevoir une réponse complète, créative et réaliste à un besoin de communication produit, en tenant compte du public cible, de l'argumentaire bio et de l'univers visuel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Travaux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <style>
+    #pdf-canvas {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+    .pdf-controls {
+      margin-top: 10px;
+    }
+    .pdf-controls button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .pdf-controls a button {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <a href="index.html" class="back-btn">← Retour</a>
+  <div class="container">
+    <h1>Mes Travaux</h1>
+    
+    <div class="travaux-container">
+      <!-- Exemple 1 - Storyboard -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <!-- Canvas pour PDF -->
+          <canvas id="pdf-canvas"></canvas>
+          <div class="pdf-controls">
+            <button onclick="prevPage()">←</button>
+            <span id="page-info">Page 1</span>
+            <button onclick="nextPage()">→</button>
+            <a href="img/storyboardrev.pdf" download>
+              <button>Télécharger</button>
+            </a>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Conception de Storyboard</h3>
+          <p>J'ai réalisé le storyboard d'un clip musical que j'ai ensuite produit. Cette étape m'a permis de penser le rythme narratif, d'organiser la mise en scène plan par plan, et de traduire visuellement une intention artistique.</p>
+          <p class="sae-reference">SAE 102 - Projet audiovisuel</p>
+        </div>
+      </div>
+
+      <!-- Exemple 2 - Projet Vidéo -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <img src="img/projet_video.jpg" alt="Projet vidéo">
+        </div>
+        <div class="travail-description">
+          <h3>Réalisation vidéo</h3>
+          <p>Production d'un clip musical avec gestion complète : scénario, tournage, montage et post-production. J'ai assuré la direction artistique et technique.</p>
+          <p class="sae-reference">SAE 105 - Production médiatique</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const url = 'img/storyboardrev.pdf'; // 🔁 chemin mis à jour
+    let pdfDoc = null,
+        pageNum = 1,
+        canvas = document.getElementById('pdf-canvas'),
+        ctx = canvas.getContext('2d');
+
+    function renderPage(num) {
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        page.render(renderContext);
+        document.getElementById('page-info').textContent = `Page ${num} / ${pdfDoc.numPages}`;
+      });
+    }
+
+    function nextPage() {
+      if (pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      renderPage(pageNum);
+    }
+
+    function prevPage() {
+      if (pageNum <= 1) return;
+      pageNum--;
+      renderPage(pageNum);
+    }
+
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      renderPage(pageNum);
+    });
+  </script>
+</body>
+</html>
