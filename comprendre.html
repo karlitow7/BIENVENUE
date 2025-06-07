@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprendre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles optimisés */
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      z-index: 100;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .travail-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .travail-visuel {
+      flex: 1;
+      min-width: 55%;
+    }
+    
+    .travail-description {
+      flex: 1;
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      justify-content: flex-start;
+      color: white;
+    }
+    
+    .pdf-viewer-container {
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      background: #333;
+    }
+    
+    .pdf-iframe {
+      width: 100%;
+      height: calc(100% - 44px);
+      border: none;
+    }
+    
+    .pdf-options {
+      text-align: center;
+      padding: 8px;
+      background: #2a2a2a;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 44px;
+      border-top: 1px solid #444;
+    }
+    
+    .pdf-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: #4a6fa5;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s;
+      font-size: 12px;
+    }
+    
+    .pdf-btn:hover {
+      background-color: #3a5a8f;
+    }
+    
+    .travail-description h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #FFD700;
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .travail-description p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      color: white;
+    }
+    
+    .sae-reference {
+      font-style: italic;
+      color: #800020 !important;
+      font-size: 15px;
+      margin-top: auto;
+      padding-bottom: 10px;
+      border-top: 1px dashed #555;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .travail-item {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+      .travail-description {
+        height: auto;
+      }
+      .pdf-viewer-container {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <a href="competences.html" class="back-btn animate__animated animate__fadeIn">← Retour</a>
+  
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">COMPRENDRE</h1>
+    
+    <div class="travaux-container animate__animated animate__fadeInUp">
+      <!-- Travail 1 - Analyse RSE -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="pdf-viewer-container animate__animated animate__zoomIn">
+            <iframe class="pdf-iframe" 
+                    src="https://drive.google.com/file/d/1Yo6MPuHjxH4yXnugi92_-7keAxalNrLb/preview" 
+                    allow="autoplay">
+            </iframe>
+            <div class="pdf-options">
+              <a href="https://drive.google.com/uc?export=download&id=1Yo6MPuHjxH4yXnugi92_-7keAxalNrLb" 
+                 class="pdf-btn">
+                Télécharger
+              </a>
+              <a href="https://drive.google.com/file/d/1Yo6MPuHjxH4yXnugi92_-7keAxalNrLb/view" 
+                 target="_blank" 
+                 class="pdf-btn">
+                Ouvrir dans Drive
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Analyse RSE d'une entreprise</h3>
+          <p>Dans le cadre d'un travail d'analyse, j'ai étudié la stratégie de Responsabilité Sociétale des Entreprises (RSE) de l'enseigne Super U.</p> 
+            <p>J'ai organisé et structuré cette recherche autour de six grands axes : économie locale, environnement, social, gouvernance, relation avec les parties prenantes et impact mesurable.</p>
+          <p class="sae-reference">SAE 302, mobilisé des compétences d'analyse, de synthèse et de compréhension des enjeux de communication d'une organisation.</p>
+        </div>
+      </div>
+
+      <!-- Travail 2 - Biomimétisme -->
+      <div class="travail-item">
+        <div class="travail-visuel">
+          <div class="pdf-viewer-container animate__animated animate__zoomIn">
+            <iframe class="pdf-iframe" 
+                    src="https://drive.google.com/file/d/1wrcrYLxsqusmLuJSJUUBxAiu_JF74ZAr/preview" 
+                    allow="autoplay">
+            </iframe>
+            <div class="pdf-options">
+              <a href="https://drive.google.com/uc?export=download&id=1wrcrYLxsqusmLuJSJUUBxAiu_JF74ZAr" 
+                 class="pdf-btn">
+                Télécharger
+              </a>
+              <a href="https://drive.google.com/file/d/1wrcrYLxsqusmLuJSJUUBxAiu_JF74ZAr/view" 
+                 target="_blank" 
+                 class="pdf-btn">
+                Ouvrir dans Drive
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="travail-description">
+          <h3>Le biomimétisme dans l'innovation et la communication</h3>
+          <p>Dans ce travail, j'ai étudié le concept du biomimétisme, en analysant comment l'observation de la nature inspire des solutions innovantes dans différents domaines : design, architecture, technologie et communication.</p>
+          <p>J'ai structuré mon analyse autour des principes fondamentaux du biomimétisme, de ses exemples concrets d'application, et de ses implications écologiques et sociétales.</p>
+          <p class="sae-reference">SAE 302 – Analyser la stratégie de communication d'une organisation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
