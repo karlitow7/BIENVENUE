@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Développer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles optimisés */
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      z-index: 100;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .travail-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .media-column {
+      flex: 1;
+      min-width: 55%;
+    }
+    
+    .description-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .media-container {
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      overflow: hidden;
+      background: #333;
+      border-radius: 8px;
+    }
+    
+    .image-container {
+      width: 100%;
+      height: auto;
+    }
+    
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #FFD700;
+      margin-top: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: white;
+    }
+    
+    .sae-reference {
+      font-style: italic;
+      color: #800020 !important;
+      font-size: 15px;
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px dashed #555;
+    }
+
+    @media (max-width: 768px) {
+      .travail-item {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .media-column,
+      .description-column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wave-bg"></div>
+  <a href="competences.html" class="back-btn animate__animated animate__fadeIn">← Retour</a>
+  
+  <div class="container">
+    <h1 class="animate__animated animate__fadeInDown">DÉVELOPPER</h1>
+    
+    <div class="travaux-container animate__animated animate__fadeInUp">
+      <!-- Travail 1 - Portfolio -->
+      <div class="travail-item">
+        <div class="media-column">
+          <div class="media-container animate__animated animate__zoomIn">
+            <div class="image-container">
+              <img src="img/site.png" alt="Capture d'écran de mon portfolio">
+            </div>
+          </div>
+        </div>
+        <div class="description-column">
+          <h3>Portfolio personnel</h3>
+          <p>Création complète d'un site internet portfolio codé en HTML, CSS et JavaScript. Ce projet regroupe l'ensemble de mes travaux réalisés durant mes 3 années de MMI ainsi que mes projets musicaux personnels.</p>
+          <p>Développement front-end autonome avec une attention particulière sur l'expérience utilisateur et le design responsive.</p>
+          <p class="sae-reference">SAE 105 – Développer un projet communication numérique</p>
+        </div>
+      </div>
+      
+      <!-- Espace pour le deuxième travail -->
+      <!-- <div class="travail-item">
+        <div class="media-column">
+          <div class="media-container">
+            [À compléter]
+          </div>
+        </div>
+        <div class="description-column">
+          <h3>[Titre]</h3>
+          <p>[Description]</p>
+          <p class="sae-reference">[SAE]</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
