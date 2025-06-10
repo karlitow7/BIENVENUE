@@ -100,6 +100,24 @@
       border-top: 1px dashed #555;
     }
 
+    .visit-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #FFD700;
+      color: #222;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .visit-btn:hover {
+      background-color: #fff;
+      transform: translateY(-2px);
+    }
+
     @media (max-width: 768px) {
       .travail-item {
         flex-direction: column;
@@ -121,6 +139,24 @@
     <h1 class="animate__animated animate__fadeInDown">DÉVELOPPER</h1>
     
     <div class="travaux-container animate__animated animate__fadeInUp">
+      <!-- Travail 2 - vanille ile -->
+      <div class="travail-item">
+        <div class="media-column">
+          <div class="media-container animate__animated animate__zoomIn">
+            <div class="image-container">
+              <img src="img/Capture d’écran 2025-06-09 204308.png" alt="Capture d'écran de mon portfolio">
+            </div>
+          </div>
+          <a href="https://vanilleile.netlify.app" target="_blank" class="visit-btn">Visiter le site</a>
+        </div>
+        <div class="description-column">
+          <h3>site web Vanill'île</h3>
+          <p>Dans le cadre d'un travail de groupe, nous avons conçu et développé le site vitrine Vanill'île, dédié à une marque fictive de bonbons bio à base de vanille Pompona.</p>
+          <p>Ce site présente les produits, l'identité de marque, les valeurs écologiques, les partenaires potentiels et les éléments de stratégie de communication.</p>
+          <p class="sae-reference">SAE 201 - mettre en pratique les bases du développement web, comprendre la structure d'un site statique, et de travailler en collaboration sur un projet concret.</p>
+        </div>
+      </div>
+
       <!-- Travail 1 - Portfolio -->
       <div class="travail-item">
         <div class="media-column">
@@ -137,20 +173,6 @@
           <p class="sae-reference">SAE 105 – Développer un projet communication numérique</p>
         </div>
       </div>
-      
-      <!-- Espace pour le deuxième travail -->
-      <!-- <div class="travail-item">
-        <div class="media-column">
-          <div class="media-container">
-            [À compléter]
-          </div>
-        </div>
-        <div class="description-column">
-          <h3>[Titre]</h3>
-          <p>[Description]</p>
-          <p class="sae-reference">[SAE]</p>
-        </div>
-      </div> -->
     </div>
   </div>
 
